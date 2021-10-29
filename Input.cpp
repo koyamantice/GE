@@ -3,11 +3,11 @@
 
 #pragma comment(lib, "dinput8.lib")
 
-bool Input::Initialize(HINSTANCE hInstance, HWND hwnd) {
+bool Input::Initialize(WinApp* winApp) {
 	HRESULT result;
-
+	this->winApp = winApp;
 	// DirectInputオブジェクトの生成	
-	result = DirectInput8Create(hInstance, DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&dinput, nullptr);
+	result = DirectInput8Create(winApp->GetHInstance(), DIRECTINPUT_VERSION, IID_IDirectInput8, (void**)&dinput, nullptr);
 	if (FAILED(result)) {
 		assert(0);
 		return result;
@@ -28,7 +28,7 @@ bool Input::Initialize(HINSTANCE hInstance, HWND hwnd) {
 	}
 
 	// 排他制御レベルのセット
-	result = devkeyboard->SetCooperativeLevel(hwnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE | DISCL_NOWINKEY);
+	result = devkeyboard->SetCooperativeLevel(winApp ->GetHwnd(), DISCL_FOREGROUND | DISCL_NONEXCLUSIVE | DISCL_NOWINKEY);
 	if (FAILED(result)) {
 		assert(0);
 		return result;

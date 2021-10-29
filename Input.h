@@ -2,6 +2,7 @@
 
 #include <Windows.h>
 #include <wrl.h>
+#include "WinApp.h"
 
 #define DIRECTINPUT_VERSION     0x0800          // DirectInputのバージョン指定
 #include <dinput.h>
@@ -11,10 +12,10 @@ class Input {
 private: // エイリアス
 	// Microsoft::WRL::を省略
 	template <class T> using ComPtr = Microsoft::WRL::ComPtr<T>;
-
+	WinApp* winApp = nullptr;
 public: // メンバ関数
 	/// 初期化
-	bool Initialize(HINSTANCE hInstance, HWND hwnd);
+	bool Initialize(WinApp* winApp);
 
 	/// 毎フレーム処理
 	void Update();
