@@ -191,7 +191,7 @@ PipelineSet object3dCreateGrphicsPipeline(ID3D12Device* dev) {
 
 	// 頂点シェーダの読み込みとコンパイル
 	result = D3DCompileFromFile(
-		L"BasicVS.hlsl",  // シェーダファイル名
+		L"Resources/Shaders/BasicVS.hlsl",  // シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "vs_5_0", // エントリーポイント名、シェーダーモデル指定
@@ -215,7 +215,7 @@ PipelineSet object3dCreateGrphicsPipeline(ID3D12Device* dev) {
 
 	// ピクセルシェーダの読み込みとコンパイル
 	result = D3DCompileFromFile(
-		L"BasicPS.hlsl",   // シェーダファイル名
+		L"Resources/Shaders/BasicPS.hlsl",   // シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "ps_5_0", // エントリーポイント名、シェーダーモデル指定
@@ -365,7 +365,7 @@ PipelineSet SpriteCreateGraaphicsPipeline(ID3D12Device* dev) {
 
 	// 頂点シェーダの読み込みとコンパイル
 	result = D3DCompileFromFile(
-		L"SpriteVS.hlsl",  // シェーダファイル名
+		L"Resources/Shaders/SpriteVS.hlsl",  // シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "vs_5_0", // エントリーポイント名、シェーダーモデル指定
@@ -389,7 +389,7 @@ PipelineSet SpriteCreateGraaphicsPipeline(ID3D12Device* dev) {
 
 	// ピクセルシェーダの読み込みとコンパイル
 	result = D3DCompileFromFile(
-		L"SpritePS.hlsl",   // シェーダファイル名
+		L"Resources/Shaders/SpritePS.hlsl",   // シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "ps_5_0", // エントリーポイント名、シェーダーモデル指定
@@ -531,7 +531,7 @@ PipelineSet Playerobject3dCreateGrphicsPipeline(ID3D12Device* dev) {
 
 	// 頂点シェーダの読み込みとコンパイル
 	result = D3DCompileFromFile(
-		L"PlayerVertexShader.hlsl",  // シェーダファイル名
+		L"Resources/Shaders/PlayerVertexShader.hlsl",  // シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "vs_5_0", // エントリーポイント名、シェーダーモデル指定
@@ -555,7 +555,7 @@ PipelineSet Playerobject3dCreateGrphicsPipeline(ID3D12Device* dev) {
 
 	// ピクセルシェーダの読み込みとコンパイル
 	result = D3DCompileFromFile(
-		L"PlayerPixelShader.hlsl",   // シェーダファイル名
+		L"Resources/Shaders/PlayerPixelShader.hlsl",   // シェーダファイル名
 		nullptr,
 		D3D_COMPILE_STANDARD_FILE_INCLUDE, // インクルード可能にする
 		"main", "ps_5_0", // エントリーポイント名、シェーダーモデル指定
